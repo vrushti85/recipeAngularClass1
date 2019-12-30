@@ -16,6 +16,22 @@ input[type="radio"]{
 
 }
 .card-title{
+  margin: 0px;
   font-size: 20px;
+  padding-left: 0px;
+
 }
 
+h1 {
+  position: relative;
+  font-size: 200px;
+  margin-top: 0;
+  font-family: 'Myriad Pro', 'Myriad', helvetica, arial, sans-serif;
+  text-shadow: 2px 3px 3px #292929;
+  letter-spacing: -7px;
+  -webkit-text-stroke: 1px white;
+
+}
+h2 {
+  text-align: center;
+}
