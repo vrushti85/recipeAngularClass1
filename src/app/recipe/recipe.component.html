@@ -1,13 +1,48 @@
 <div class="container">
-    <form>
-        <div class="form-group">
-            <label for="email">Email address:</label>
-            <input type="email" class="form-control" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" placeholder="Enter password">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="jumbotron">
+    <form [formGroup]="addRecipeForm">
+      <div class="form-group">
+        <label for="recipe name">Name:</label>
+        <input type="email" formControlName="recipeName" class="form-control" placeholder="Recipe Name">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Image:</label>
+        <input type="text" formControlName="imageUrl" class="form-control" placeholder="Image">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Description:</label>
+        <input type="text" formControlName="description" class="form-control" placeholder="Image">
+      </div>
+      <div class="form-group">
+        <label for="foodType">Type:</label>
+        <label>Veg.
+          <input type="radio" formControlName="type" value="vegetarian">
+          <span class="checkmark"></span>
+        </label>
+        <label>Non Veg.
+          <input type="radio" formControlName="type" value="non-vegetarian">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Chef:</label>
+        <input type="text" formControlName="chefName" class="form-control" placeholder="Enter chef name">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="addrecipe()">Submit</button>
     </form>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mt-3" *ngFor="let food of foodsStall">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" [src]="food.imageUrl" alt="Card image cap">
+        <div class="card-body">
+          <div class="row">
+          <strong class="card-title col-md-8"> {{food.recipeName}} </strong>
+          <div class="circle col-md-0.5" [ngStyle]="{'background-color':food.type === 'non-vegetarian' ? 'red' : 'green' }"></div>
+        </div>
+          <p class="card-text">{{food.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
