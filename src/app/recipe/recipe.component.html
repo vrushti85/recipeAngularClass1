@@ -1,36 +1,36 @@
 <div class="container">
   <div class="jumbotron">
     <form [formGroup]="addRecipeForm">
-      <div class="form-group">
-        <h2>Recipe Book</h2>
-        <label for="recipe name">Name:</label>
-        <input type="email" formControlName="recipeName" class="form-control" placeholder="Recipe Name">
-      </div>
-      <div class="form-group">
-        <label for="pwd">Image:</label>
-        <input type="text" formControlName="imageUrl" class="form-control" placeholder="Image">
-      </div>
-      <div class="form-group">
-        <label for="pwd">Description:</label>
-        <input type="text" formControlName="description" class="form-control" placeholder="Image">
-      </div>
-      <div class="form-group">
-        <label for="foodType">Type:</label>
-        <label>Veg.
-          <input type="radio" formControlName="type" value="vegetarian">
-          <span class="checkmark"></span>
-        </label>
-        <label>Non Veg.
-          <input type="radio" formControlName="type" value="non-vegetarian">
-          <span class="checkmark"></span>
-        </label>
-      </div>
-      <div class="form-group">
-        <label for="pwd">Chef:</label>
-        <input type="text" formControlName="chefName" class="form-control" placeholder="Enter chef name">
-      </div>
-      <button type="submit" class="btn btn-primary" (click)="addrecipe()"  [ngClass]="{'disabled':!addRecipeForm.valid}"
-      [disabled]="!addRecipeForm.valid">Submit</button>
+        <div class="form-group">
+          <h2>Recipe Book</h2>
+          <label for="recipe name">Name:</label>
+          <input type="email" formControlName="recipeName" class="form-control" placeholder="Recipe Name">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Image:</label>
+          <input type="text" formControlName="imageUrl" class="form-control" placeholder="Image">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Description:</label>
+          <input type="text" formControlName="description" class="form-control" placeholder="Description">
+        </div>
+        <div class="form-group">
+          <label for="foodType">Type:</label>
+          <label>Veg.
+            <input type="radio" formControlName="type" value="vegetarian">
+            <span class="checkmark"></span>
+          </label>
+          <label>Non Veg.
+            <input type="radio" formControlName="type" value="non-vegetarian">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Chef:</label>
+          <input type="text" formControlName="chefName" class="form-control" placeholder="Chef name">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="addrecipe()"  [ngClass]="{'disabled':!addRecipeForm.valid}"
+        [disabled]="!addRecipeForm.valid">Submit</button>
     </form>
   </div>
   <div class="row">
@@ -44,6 +44,7 @@
           <!-- <div class="circle col-md-0.5" ></div> -->
         </div>
           <p class="card-text">{{food.description}}</p>
+          <p class="card-text"><strong>Made By:</strong> {{food.chefName}}</p>
         </div>
       </div>
     </div>
