@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecipeListingComponent } from './recipe-listing/recipe-listing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RecipeComponent
+    RecipeComponent,
+    RecipeListingComponent
   ],
   imports: [
     BrowserModule,
