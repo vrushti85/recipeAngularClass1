@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HelperService } from 'src/app/services/helper.service';
 
 @Component({
   selector: 'app-recipe-listing',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeListingComponent implements OnInit {
 
-  foodsStall = [];
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit() {
   }

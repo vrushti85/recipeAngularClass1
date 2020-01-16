@@ -1,0 +1,51 @@
+input[type="radio"] {
+  margin: 0 10px 0 10px;
+}
+
+.foodType {
+  margin: 0 10px 0 10px;
+}
+
+.card-text {
+  justify-content: center;
+}
+
+.circle {
+  height: 20px;
+  width: 10px;
+  float: right;
+  width: 20px;
+}
+
+.card-title {
+  margin: 0px;
+  font-size: 20px;
+  padding-left: 0px;
+}
+
+h1 {
+  position: relative;
+  font-size: 200px;
+  margin-top: 0;
+  font-family: 'Myriad Pro', 'Myriad', helvetica, arial, sans-serif;
+  text-shadow: 2px 3px 3px #292929;
+  letter-spacing: -7px;
+  -webkit-text-stroke: 1px white;
+
+}
+
+h2 {
+  text-align: center;
+}
+
+.selectRecipe {
+  width: 45rem;
+  margin-left: -107px;
+  margin-top: 14px;
+  background-color: #e9ecef;
+}
+
+.active-class {
+  border-color: black;
+  border-width: 3px;
+}

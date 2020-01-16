@@ -1,1 +1,35 @@
-<p>all-recipes works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="col-md-4 mt-3" *ngFor="let recipe of recipes">
+                <div class="card" style="width: 18rem;" (click)="recipeDetail(recipe)"
+                    [ngClass]="{'active-class': recipe.recipeName === selectedRecipe.recipeName}">
+                    <img class="card-img-top" [src]="recipe.imageUrl" alt="Card image cap">
+                    <div class="card-body">
+                        <div>
+                            <div class="circle inline"
+                                [ngStyle]="{'background-color':recipe.type === 'non-vegetarian' ? 'red' : 'green' }">
+                            </div>
+                            <strong class="card-title col-md-8"> {{recipe.recipeName}}</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7" *ngIf="selectedRecipe">
+            <div class="card selectRecipe">
+                <img class="card-img-top" [src]="selectedRecipe.imageUrl" alt="Card image cap">
+                <div class="card-body">
+                    <div>
+                        <div class="circle inline"
+                            [ngStyle]="{'background-color':selectedRecipe.type === 'non-vegetarian' ? 'red' : 'green' }">
+                        </div>
+                        <strong class="card-title col-md-8"> {{selectedRecipe.recipeName}}</strong>
+                    </div>
+                    <p class="card-text">{{selectedRecipe.description}}</p>
+                    <p class="card-text"><strong>Made By:</strong> {{selectedRecipe.chefName}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
