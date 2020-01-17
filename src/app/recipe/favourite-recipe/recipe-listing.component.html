@@ -1,0 +1,16 @@
+<div class="container">
+  <p>Favrioute List</p>
+  <div class="card" style="width: 18rem;" *ngFor="let recipes of favriouteList">
+    <img class="card-img-top" [src]="recipes.imageUrl">
+    <div class="card-body">
+      <div>
+        <div class="circle inline"
+          [ngStyle]="{'background-color':recipes.type === 'non-vegetarian' ? 'red' : 'green' }">
+        </div>
+        <strong class="card-title col-md-8"> {{recipes.recipeName}}</strong>
+      </div>
+      <p class="card-text">{{recipes.description}}</p>
+      <p class="card-text"><strong>Made By:</strong> {{recipes.chefName}}</p>
+    </div>
+  </div>
+</div>

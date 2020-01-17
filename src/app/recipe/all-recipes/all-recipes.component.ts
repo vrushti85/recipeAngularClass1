@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HelperService } from 'src/app/services/helper.service';
 
 @Component({
@@ -22,4 +22,7 @@ export class AllRecipesComponent implements OnInit {
     this.selectedRecipe = recipe;
   }
 
+  public toggleSelected() {
+    this.selectedRecipe.favrioute = !this.selectedRecipe.favrioute;
+  }
 }
