@@ -1,11 +1,17 @@
-<div>
-  <form class="form" [formGroup]="signinForm">
-      <label> Username </label>
-      <input type="text" placeholder="Enter username" formControlName="username" />
-      <label>Password</label>
-      <input type="password" placeholder="Enter password" formControlName="password" />
-    <div>
-      <button (click)="submit()" [disabled]="!signinForm.valid">Sign In</button>
-    </div>
-  </form>
+<div class="container">
+  <div>
+    <form class="form" [formGroup]="signinForm">
+      <label> Username: </label>
+      <div>
+        <input type="text" placeholder="Enter username" formControlName="username" />
+      </div>
+      <label>Password: </label>
+      <div>
+        <input type="password" placeholder="Enter password" formControlName="password" />
+      </div>
+      <div>
+        <button (click)="submit()" [disabled]="!signinForm.valid">Sign In</button>
+      </div>
+    </form>
+  </div>
 </div>
