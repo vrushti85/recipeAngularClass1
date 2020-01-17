@@ -39,7 +39,6 @@ export class SignInComponent implements OnInit {
       localStorage.setItem('LoggedUser', JSON.stringify(requestBody.username));
       localStorage.setItem('token', 'true');
       this.router.navigate(['add-recipe']);
-      this.authService.onLogin();
     }
   }
 }
