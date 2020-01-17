@@ -1,16 +1,24 @@
 <div class="container">
-  <p>Favrioute List</p>
-  <div class="card" style="width: 18rem;" *ngFor="let recipes of favriouteList">
-    <img class="card-img-top" [src]="recipes.imageUrl">
-    <div class="card-body">
-      <div>
-        <strong class="card-title col-md-8"> {{recipes.recipeName}}</strong>
-        <div class="circle inline"
-          [ngStyle]="{'background-color':recipes.type === 'non-vegetarian' ? 'red' : 'green' }">
+  <div class="search-hero">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText"
+    placeholder="&#61442;  Start searching for your favrioute dishesh">
+  </div>
+  <div *ngIf="( favriouteList | filter : searchText) as result">
+    <div class="card" style="width: 18rem;" *ngFor="let recipes of result">
+      <img class="card-img-top" [src]="recipes.imageUrl">
+      <div class="card-body">
+        <div>
+          <strong class="card-title col-md-8"> {{recipes.recipeName}}</strong>
+          <div class="circle inline"
+            [ngStyle]="{'background-color':recipes.type === 'non-vegetarian' ? 'red' : 'green' }">
+          </div>
         </div>
+        <p class="card-text">{{recipes.description}}</p>
+        <p class="card-text"><strong>Made By:</strong> {{recipes.chefName}}</p>
       </div>
-      <p class="card-text">{{recipes.description}}</p>
-      <p class="card-text"><strong>Made By:</strong> {{recipes.chefName}}</p>
+    </div>
+    <div class="containeeer" *ngIf="result.length === 0">
+      <img src="../../../assets/images//foodNotFound.jpg">
     </div>
   </div>
 </div>

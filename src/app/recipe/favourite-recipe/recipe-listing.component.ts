@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HelperService } from 'src/app/services/helper.service';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-recipe-listing',
@@ -8,8 +9,11 @@ import { HelperService } from 'src/app/services/helper.service';
 })
 export class RecipeListingComponent implements OnInit {
   recipes;
+  searchText;
   favriouteList = [];
-  constructor(private helperService: HelperService) {
+  constructor(
+    private helperService: HelperService,
+    private authService: AuthService) {
     this.recipes = this.helperService.recipes;
     if (this.recipes) {
       this.recipes.forEach(element => {
