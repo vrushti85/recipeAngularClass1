@@ -15,11 +15,8 @@ export class AuthService {
 
   public isAuthenticated(): boolean {
     const token = JSON.parse(localStorage.getItem('token'));
+    this.checkAuth.next(token);
     return token;
-  }
-
-  onLogin() {
-    this.checkAuth.next(true);
   }
 
   onLogout() {
