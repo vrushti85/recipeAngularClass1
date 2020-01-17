@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from "../auth.service";
 
 @Component({
   selector: 'app-sign-in',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class SignInComponent implements OnInit {
   public signinForm: FormGroup;
 
-  constructor( private formbuilder: FormBuilder, private router: Router ) {}
+  constructor( private formbuilder: FormBuilder, private router: Router, private authService: AuthService ) {}
 
   ngOnInit() {
     this.signInForm();
@@ -38,6 +39,7 @@ export class SignInComponent implements OnInit {
       localStorage.setItem('LoggedUser', JSON.stringify(requestBody.username));
       localStorage.setItem('token', 'true');
       this.router.navigate(['add-recipe']);
+      this.authService.onLogin();
     }
   }
 }
