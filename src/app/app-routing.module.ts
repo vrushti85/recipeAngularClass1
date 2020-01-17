@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { RecipeListingComponent } from './recipe/favourite-recipe/recipe-listing.component';
 import { AddRecipeComponent } from './recipe/add-recipe/add-recipe.component';
 import { AllRecipesComponent } from './recipe/all-recipes/all-recipes.component';
-import { SignInComponent } from './sign-in/sign-in.component';
 import { AuthGuard } from './auth.guard';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
