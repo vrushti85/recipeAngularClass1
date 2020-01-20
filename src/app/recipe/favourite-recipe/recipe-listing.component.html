@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="search-hero">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText"
+      placeholder="&#61442;  Start searching for your favrioute dishes">
+  </div>
+  <div *ngIf="( favriouteList | filter : searchText) as result">
+    <div class="index-content">
+      <div class="card" style="width: 18rem;" *ngFor="let recipes of result">
+        <img class="card-img-top" [src]="recipes.imageUrl">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-10">
+              <strong class="card-title col-md-8"> {{recipes.recipeName}}</strong>
+            </div>
+            <div class="col-2">
+              <span class="circle inline"
+                [ngStyle]="{'background-color':recipes.type === 'non-vegetarian' ? 'red' : 'green' }">
+              </span>
+            </div>
+          </div>
+          <p class="card-text">{{recipes.description}}</p>
+          <p class="card-text"><strong>Made By:</strong> {{recipes.chefName}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="containeeer" *ngIf="result.length === 0">
+      <img src="../../../assets/images//foodNotFound.jpg">
+    </div>
+  </div>
+</div>
