@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HelperService } from 'src/app/services/helper.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-recipe',
@@ -12,6 +13,7 @@ export class AddRecipeComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private helperService: HelperService,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit() {
@@ -29,5 +31,6 @@ export class AddRecipeComponent implements OnInit {
   addrecipe() {
     this.helperService.recipes.push(this.addRecipeForm.value);
     this.addRecipeForm.reset();
+    this.toastr.success('Recipe added successfully');
   }
 }
